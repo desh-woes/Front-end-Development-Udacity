@@ -24,7 +24,19 @@
     margin-right: 20px;
 }
 
-.pager_buttons button {
+q {
+    display: block;
+    text-align: center;
+    font-style: italic;
+    font-size: larger;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.buttons {
     margin-right: 15px;
     border-radius: 20px;
     height: 40px;
@@ -35,12 +47,12 @@
     background-color: white;
 }
 
-.pager_buttons button:hover {
+.buttons:hover {
     color: #48a2f1;
     border: 1px solid #48a2f1;
 }
 
-.main_blog h5 {
+.main_blog_h5 {
     color: #8d8d8d;
 }
 
@@ -48,11 +60,11 @@
     grid-area: side;
 }
 
-.sidebar a, .main_blog a {
+a {
     color: #48a2f1;
 }
 
-.sidebar a {
+.sidebar_a {
     display: block;
 }
 
@@ -61,12 +73,12 @@
     padding: 10px;
 }
 
-.sidebar h3 {
+.sidebar_h3 {
     font-style: italic;
     margin: 0 auto;
 }
 
-.sidebar div{
+.sidebar_div{
     margin-bottom: 50px;
 }
 
@@ -77,7 +89,7 @@
     }
 
 
-    .sidebar div{
+    .sidebar_div{
         margin-bottom: 20px;
     }
 }

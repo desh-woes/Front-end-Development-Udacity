@@ -31,7 +31,7 @@ header button {
 }
 
 /*Styling for the section containing the blog cards.*/
-.blog_container section {
+.blog_section_class {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: minmax(0, 1fr);
@@ -42,7 +42,7 @@ header button {
 }
 
 @media screen and (max-width: 800px){
-    .blog_container section{
+    .blog_section_class {
         grid-template-columns: 1fr;
         width: 90%;
     }
@@ -65,23 +65,23 @@ header button {
 }
 
 
-.blog_card h4, .blog_card h5{
+.blog_card_h4, .blog_card_h5{
     margin: 0 auto;
 }
 
-.blog_card h5 {
+.blog_card_h5 {
     color: grey;
 }
 
-.blog_card h4, .blog_card a, footer a {
+.blog_card_h4, a {
     color: #48a2f1;
 }
 
-.blog_card_info2 h4{
+.blog_card2_h4{
     color: #008500;
 }
 
-.blog_card h2{
+.blog_card_h2{
     margin: 0 auto;
     padding-top: 10px;
 }
