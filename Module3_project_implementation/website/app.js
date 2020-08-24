@@ -1,6 +1,6 @@
 /* Global Variables */
 const base_url = "http://api.openweathermap.org/data/2.5/weather?zip=";
-const api_key = "&appid=908ca379d62b29cf7ca290c5c8a2a46c";
+const api_key = "&appid=908ca379d62b29cf7ca290c5c8a2a46c&units=imperial";
 
 // Create a new date instance dynamically with JS
 let d = new Date();
@@ -49,9 +49,9 @@ const getProjectData = async (url = "") => {
         const userInputHolder = document.querySelector("#content");
 
         // Update DOM content.
-        tempratureHolder.textContent = newData.temprature;
-        dateHolder.textContent = newData.date;
-        userInputHolder.textContent = newData.user_response;
+        tempratureHolder.innerHTML = newData.temprature;
+        dateHolder.innerHTML = newData.date;
+        userInputHolder.innerHTML = newData.user_response;
     } catch(error) {
         console.log("error", error);
     }
