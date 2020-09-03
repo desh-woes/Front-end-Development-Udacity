@@ -4,6 +4,7 @@ const mockAPIResponse = require('./mockAPI.js')
 const dotenv = require("dotenv");
 const cors = require('cors')
 const fetch = require("node-fetch");
+const bodyParser = require("body-parser");
 
 dotenv.config();
 
@@ -12,6 +13,9 @@ const app = express()
 app.use(express.static('dist'))
 
 app.use(cors())
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 console.log(__dirname)
 
@@ -43,7 +47,7 @@ const getMeaningCloud = async (url = "") => {
 app.post('/meaningCloud', returnMeaningCloudData);
     async function returnMeaningCloudData(req, res){
         // Construct URL
-        const userLink = req.body;
+        const userLink = req.body.url;
         const url = `https://api.meaningcloud.com/sentiment-2.1?key=${process.env.API_KEY}&lang=en&url=${userLink}`;
         console.log(url);
         const newData = await getMeaningCloud(url);
