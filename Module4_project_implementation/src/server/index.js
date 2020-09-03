@@ -40,13 +40,21 @@ const getMeaningCloud = async (url = "") => {
     }
 }
 
-app.get('/meaningCloud', returnMeaningCloudData);
-    function returnMeaningCloudData(req, res){
+app.post('/meaningCloud', returnMeaningCloudData);
+    async function returnMeaningCloudData(req, res){
         // Construct URL
-        const userLink = "https://www.linkedin.com/pulse/20-year-olds-journal-oluwarotimi-adesina/";
+        const userLink = req.body;
         const url = `https://api.meaningcloud.com/sentiment-2.1?key=${process.env.API_KEY}&lang=en&url=${userLink}`;
         console.log(url);
-        const newData = getMeaningCloud(url);
-        console.log(newData);
-        res.send(newData);
+        const newData = await getMeaningCloud(url);
+        const outputObj = {
+            model : newData.model,
+            score_tag : newData.score_tag,
+            agreement : newData.agreement,
+            subjectivity : newData.subjectivity,
+            confidence : newData.confidence,
+            irony : newData.irony
+        }
+        console.log(outputObj);
+        res.send(outputObj);
     }
