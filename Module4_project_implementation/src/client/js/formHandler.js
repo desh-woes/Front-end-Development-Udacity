@@ -29,7 +29,12 @@ function handleSubmit(event) {
 
     postMeaningCloudInfo("http://localhost:8081/meaningCloud", {url: formText})
     .then(function(res){
-        console.log(res);
+        const entries = Object.entries(res);
+        for (const entry of entries){
+            const newParagraph = document.createElement('p');
+            newParagraph.appendChild(document.createTextNode(`${entry[0]}: ${entry[1]}`))
+            document.getElementById('results').appendChild(newParagraph);
+        }
     })
 }
 
