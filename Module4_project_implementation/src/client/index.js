@@ -1,5 +1,6 @@
 import { checkForName } from './js/nameChecker'
 import { handleSubmit } from './js/formHandler'
+import { isValidUrl } from './js/formValidator'
 
 import './styles/resets.scss'
 import './styles/base.scss'
@@ -10,5 +11,6 @@ import './styles/header.scss'
 
 export {
     checkForName,
-    handleSubmit
+    handleSubmit,
+    isValidUrl
 }

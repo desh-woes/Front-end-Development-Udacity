@@ -18,11 +18,18 @@ const postMeaningCloudInfo = async (url_path = "", data={}) => {
     }
 }
 
+
+
 function handleSubmit(event) {
     event.preventDefault()
 
     // check what text was put into the form field
     let formText = document.getElementById('name').value
+    console.log(Client.isValidUrl(formText));
+    if (!Client.isValidUrl(formText)) {
+        alert("Please enter a valid URL");
+        return;
+    }
     Client.checkForName(formText)
 
     console.log("::: Form Submitted :::")
