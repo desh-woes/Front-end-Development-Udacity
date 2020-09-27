@@ -1,0 +1,123 @@
+$font-stack:    Helvetica, sans-serif;
+$primary-color: #333;
+
+* {
+    box-sizing: border-box;
+} 
+
+body {
+    font: 100% $font-stack;
+    color: $primary-color;
+    margin: 0 auto;
+}
+
+header {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.panel {
+    background-color: rgb(255, 210, 232);
+    display: grid;
+    grid-auto-columns: 2fr 1fr;
+    grid-auto-flow: dense;
+    align-items: center;
+    width: 90%;
+    // height: 70vh;
+    min-height: 100%;
+    margin: 0 auto;
+    column-gap: 20px;
+    padding: 3%;
+
+    @media screen and (max-width: 850px) {
+        display: flex;
+        flex-direction: column-reverse;
+        width: 100%;
+        padding: 3%;
+        height: 100%;
+        align-items: flex-start;
+    }
+}
+
+#img-holder{
+    display: none;
+}
+
+#travel-image {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+
+    @media screen and (max-width: 850px) {
+        margin-bottom: 15px;
+    }
+}
+
+.holder {
+    width: 100%;
+
+    label {
+        font-weight: bold;
+        font-size: 24px;
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    input{
+        display: block;
+        background-color: rgb(255, 210, 232);
+        color: black;
+        font-size: 20px;
+        border: 1px solid rgb(109, 97, 103);
+        border-radius: 4px;
+        margin-bottom: 15px;
+        font-family: $font-stack;
+        width: 100%;
+        padding: 12px 20px;
+        margin: 20px 0;
+        box-sizing: border-box;
+    }
+}
+
+.panel-body-buttons {
+    display: flex;
+    justify-content: space-between;
+
+    button {
+        padding: 15px 32px;
+        text-align: center;
+        font-size: 16px;
+
+        &:hover {
+            background-color:  rgb(255, 210, 232);
+        }
+      }
+}
+
+#trip-countdown {
+    font-size: x-large;
+
+    span {
+        font-weight: bolder;
+    }
+}
+
+#weather {
+    font-size: larger;
+    font-style: italic;
+}
+
+#trip-weather {
+    font-weight: bolder;
+}
+
+#trip-weather-summary {
+    font-weight: bolder;
+}
+
+.panel-body {
+    width: 100%;
+}
+
