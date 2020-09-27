@@ -48,10 +48,9 @@ async function saveTripAction(){
         date_diff : dateDiff
     }
 
-    trip_information.innerHTML = loader();
+    trip_information.style.display = "none";
     const response = await postWeatherInfo('http://localhost:8081/addProjectData', newObj);
     img_holder.innerHTML = destinationImage(response);
-    img_holder.innerHTML = loader();
     img_holder.style.display = "block";
     trip_information.innerHTML = tripInformation(response);
 }
