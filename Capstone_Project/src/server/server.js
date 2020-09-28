@@ -46,6 +46,7 @@ app.post('/addProjectData', receiveData);
         .then(function (weatherbit_result){
             // Update app endpoint with the new data from weatherbit
             let index = projectData.date_diff;
+            console.log(index);
             projectData.high_temp = weatherbit_result.data[index].high_temp;
             projectData.low_temp = weatherbit_result.data[index].low_temp;
             projectData.weather_description = weatherbit_result.data[index].weather.description;

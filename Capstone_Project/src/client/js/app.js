@@ -24,9 +24,17 @@ const postWeatherInfo = async (url_path = "", data={}) => {
 
 function getDateDiff(inputDate){
     let dateToday = new Date();
-    let travelDate = new Date(inputDate[0], inputDate[1], inputDate[2]);
+    let travelDate = new Date(inputDate[0], inputDate[1]-1, inputDate[2]);
 
-    return travelDate.getDate() - dateToday.getDate();
+    console.log(travelDate);
+
+    let Difference_In_Time = Math.round(travelDate.getTime() - dateToday.getTime()); 
+  
+    // To calculate the no. of days between two dates 
+    let Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
+
+    console.log(`Travel Date: ${parseInt(Difference_In_Days.toFixed(0)) +1}`);
+    return parseInt(Difference_In_Days.toFixed(0))+1;
 }
 
 async function saveTripAction(){
@@ -48,10 +56,10 @@ async function saveTripAction(){
         date_diff : dateDiff
     }
 
-    trip_information.style.display = "none";
+    img_holder.style.display = "block";
+    img_holder.innerHTML = loader();
     const response = await postWeatherInfo('http://localhost:8081/addProjectData', newObj);
     img_holder.innerHTML = destinationImage(response);
-    img_holder.style.display = "block";
     trip_information.innerHTML = tripInformation(response);
 }
 
